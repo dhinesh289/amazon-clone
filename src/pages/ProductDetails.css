@@ -1,0 +1,138 @@
+.productDetails {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 40px;
+  padding: 40px;
+  background-color: #fff;
+}
+
+/* IMAGE */
+.productDetails__image img {
+  width: 100%;
+  max-width: 400px;
+  object-fit: contain;
+}
+
+/* INFO SECTION */
+.productDetails__info h1 {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.rating {
+  margin: 10px 0;
+  color: #f08804;
+}
+
+.price {
+  margin: 15px 0;
+}
+
+.discounted {
+  font-size: 22px;
+  font-weight: bold;
+  color: #b12704;
+  margin-right: 10px;
+}
+
+.original {
+  text-decoration: line-through;
+  color: #555;
+  margin-right: 10px;
+}
+
+.discount {
+  color: green;
+  font-weight: 500;
+}
+
+.brand {
+  margin: 10px 0;
+}
+
+.description {
+  margin-top: 15px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* BUY BOX */
+.productDetails__buyBox {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  height: fit-content;
+}
+
+.buyPrice {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.stock {
+  color: green;
+  margin-bottom: 15px;
+}
+
+.addBtn {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  border: none;
+  background: #ffd814;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.addBtn:hover {
+  background: #f7ca00;
+}
+
+.buyBtn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  background: #ffa41c;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.buyBtn:hover {
+  background: #fa8900;
+}
+
+.loading {
+  text-align: center;
+  margin-top: 100px;
+}
+.productDetails {
+  display: grid;
+  grid-template-columns: 1.2fr 2fr 1fr;
+  gap: 40px;
+  padding: 40px 80px;
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+  background-color: #fff;
+}
+@media (max-width: 992px) {
+  .productDetails {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .productDetails__image {
+    text-align: center;
+  }
+
+  .productDetails__image img {
+    max-width: 250px;
+  }
+
+  .productDetails__buyBox {
+    margin-top: 20px;
+  }
+}

@@ -1,0 +1,20 @@
+.orderSuccess{
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.orderSuccess h1 {
+    color: green;
+
+}
+
+.orderSuccess button {
+    padding: 10px 20px;
+    background-color: #ffd814;
+    border:1px solid #fcd200;
+    cursor: pointer;
+    font-weight: bold;
+}
