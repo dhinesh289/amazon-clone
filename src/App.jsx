@@ -5,6 +5,9 @@ import Checkout from "./pages/Checkout";
 import ProductDetails from "./pages/ProductDetails";
 import OrderSuccess from "./pages/OrderSuccess";
 import { useState } from "react";
+import Account from "./pages/Account";
+import Orders from "./pages/Orders";
+import Wishlist from "./pages/Wishlist";
 
 
 function App() {
@@ -21,6 +24,16 @@ function App() {
         <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/cart" element={<Checkout />} />
         <Route path="/order-success" element={<OrderSuccess />} />
+        
+        <Route path="/account" element={<Account />}  />
+        <Route path="/orders" element={<Orders />}  />
+        <Route path="/wishlist" element={<Wishlist />}  />
+
+
+
+        <Route path="/account" element={<h2 style={{padding:"40px"}}>My Account Page</h2>} />
+        <Route path="/orders" element={<h2 style={{padding:"40px"}}>My Orders Page</h2>} />
+        <Route path="/register" element={<h2 style={{padding:"40px"}}>Register Page</h2>} />
       </Routes>
     </Router>
   );

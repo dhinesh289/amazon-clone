@@ -3,8 +3,9 @@
   align-items: center;
   justify-content: space-between;
   background-color: #131921;
-  padding: 10px 20px;
+  padding: 0px 20px;
   color: white;
+  height: 60px;
 }
 
 /* Left */
@@ -47,10 +48,12 @@
   flex-direction: column;
   font-size: 12px;
   cursor: pointer;
+  color: #ddd;
 }
 
 .header__option strong {
   font-size: 14px;
+  color: #ddd;
 }
 
 .cart {
@@ -58,17 +61,17 @@
   cursor: pointer;
 }
 
-.header {
-  background-color: #131921;
+
+
+.logo {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
+  cursor: pointer;
 }
 
 .logo img {
-  width: 120px;
-  height: 35px;
+  width: auto;
+  height: 40px;
   object-fit: contain;
 }
 
@@ -100,6 +103,76 @@
   color: white;
   text-decoration: none;
   font-size: 22px;
+}
+
+.accountDropdown {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 220px;
+  background: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  padding: 15px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+
+.signinBtn {
+  background-color: #ffd814;
+  padding: 8px;
+  text-align: center;
+  border-radius: 20px;
+  text-decoration: none;
+  color: black;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.signinBtn:hover {
+  background-color: #f7ca00;
+}
+
+.newCustomer {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.dropdownItem {
+  padding: 6px 0;
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+}
+
+.dropdownItem:hover {
+  text-decoration: underline;
+}
+
+.accountSection {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Hide by default */
+.accountDropdown {
+ 
+  position: absolute;
+  top: 45px;
+  right: 0;
+  width: 220px;
+  background: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  padding: 15px;
+  z-index: 999;
+}
+
+/* Show on hover */
+.accountSection:hover .accountDropdown {
+  display: flex;
+  flex-direction: column;
 }
 
 @media (max-width: 768px) {
