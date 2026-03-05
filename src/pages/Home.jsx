@@ -15,16 +15,23 @@ function Home({ searchQuery }) {
   const { addToCart } = useCart();
 
   // Fetch products
-  useEffect(() => {
-    fetch("https://dummyjson.com/products?limit=100")
-      .then((res) => res.json())
-      .then((data) => {
-        setProducts(data.products);
-        setFilteredProducts(data.products);
-        setLoading(false);
-      })
-      .catch((err) => console.log(err));
-  }, []);
+ useEffect(() => {
+  async function fetchProducts() {
+    try {
+      const res = await fetch("https://dummyjson.com/products?limit=100");
+      const data = await res.json();
+
+      setProducts(data.products);
+      setFilteredProducts(data.products);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  fetchProducts();
+}, []);
 
   // Categories
   const categories = [
@@ -144,9 +151,9 @@ function Home({ searchQuery }) {
 
         {/* LOADING */}
         {loading ? (
-          <h2 style={{ textAlign: "center", marginTop: "40px" }}>
+          <div style={{ textAlign: "center", marginTop: "40px" }}>
             Loading products...
-          </h2>
+          </div>
         ) : (
           <>
             {/* PRODUCT GRID */}
