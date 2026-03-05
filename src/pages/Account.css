@@ -1,0 +1,54 @@
+.accountPage {
+  background-color: #eaeded; /* Amazon light gray background */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.accountContainer {
+  width: 100%;
+  max-width: 500px;
+}
+
+h1 {
+  font-size: 28px;
+  color: #111; /* dark title */
+  margin-bottom: 30px;
+}
+
+.accountCard {
+  background-color: #fff; /* white card like Amazon */
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.accountLabel {
+  font-weight: bold;
+  margin-top: 15px;
+  color: #555; /* medium gray for labels */
+}
+
+.accountValue {
+  font-size: 16px;
+  color: #111; /* dark for user info */
+  margin-bottom: 10px;
+}
+
+.logoutBtn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px 0;
+  background-color: #f0c14b; /* Amazon yellow */
+  border: 1px solid #a88734; /* Amazon border */
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 3px;
+}
+
+.logoutBtn:hover {
+  background-color: #ddb347;
+}

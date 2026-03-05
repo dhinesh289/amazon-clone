@@ -1,0 +1,181 @@
+/* Page Layout */
+
+.giftPage {
+  padding: 40px 20px;
+  background: #f3f3f3;
+  min-height: 100vh;
+}
+
+/* ================= HERO SECTION ================= */
+
+.giftHero {
+  background: #232F3E;
+  padding: 60px 20px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 40px;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  
+}
+
+.giftHero h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.giftHero p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.giftHero button {
+  background: #ffd814;
+  border: 1px solid #fcd200;
+  padding: 12px 28px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.giftHero button:hover {
+  background: #f7ca00;
+  transform: scale(1.05);
+}
+
+/* ================= CATEGORY BUTTONS ================= */
+
+.giftCategories {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 35px;
+  justify-content: center;
+}
+
+.giftCategories button {
+  padding: 10px 18px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.giftCategories button:hover {
+  background: #ffd814;
+  border-color: #f0c14b;
+}
+
+/* ================= GIFT CARD GRID ================= */
+
+.giftGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+/* ================= CARD ================= */
+
+.giftCard {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.giftCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.1);
+}
+
+.giftCard img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.giftCard h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.giftPrice {
+  color: #b12704;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+/* ================= BUTTON ================= */
+
+.giftBtn {
+  background: #ffd814;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 22px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.giftBtn:hover {
+  background: #f7ca00;
+  transform: scale(1.05);
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+
+@media (max-width: 900px) {
+
+  .giftHero h1 {
+    font-size: 30px;
+  }
+
+  .giftHero p {
+    font-size: 16px;
+  }
+
+  .giftGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+  .giftHero {
+    padding: 40px 15px;
+  }
+
+  .giftHero h1 {
+    font-size: 24px;
+  }
+
+  .giftHero p {
+    font-size: 14px;
+  }
+
+  .giftGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .giftCategories {
+    justify-content: center;
+  }
+
+  .giftCategories button {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+}

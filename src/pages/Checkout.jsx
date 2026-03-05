@@ -1,83 +1,67 @@
 import { useCart } from "../context/CartContext";
+import { useOrders } from "../context/OrdersContext";
 import { useNavigate } from "react-router-dom";
-import "./Checkout.css";
+import './Checkout.css';
 
 function Checkout() {
-  const { cart, removeFromCart, addToCart, clearCart } = useCart();
+  const { cart, addToCart, removeFromCart, clearCart } = useCart();
+  const { addOrder } = useOrders();
   const navigate = useNavigate();
 
-  const total = cart.reduce(
-    (sum, item) => sum + item.price * item.qty,
-    0
-  );
+  const handleCheckout = () => {
+    if (cart.length === 0) return;
 
-  if (cart.length === 0) {
-    return (
-      <h2 style={{ padding: "20px", textAlign: "center" }}>
-        Your cart is empty
-      </h2>
-    );
-  }
+    const order = {
+      date: new Date().toLocaleString(),
+      status: "Pending",
+      products: cart.map((p) => ({
+        id: p.id,
+        title: p.title,
+        price: p.price,
+        qty: p.qty,
+        thumbnail: p.thumbnail || p.images?.[0] || "",
+      })),
+    };
+
+    addOrder(order);
+    clearCart();
+    navigate("/order-success");
+  };
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h2>Checkout</h2>
+    <div className="checkoutContainer">
+      <div className="cartItems">
+        {cart.length === 0 ? (
+          <p>Your cart is empty.</p>
+        ) : (
+          cart.map((item) => (
+            <div key={item.id} className="cartItem">
+              <img src={item.thumbnail || item.images?.[0]} alt={item.title} />
+              <div className="itemInfo">
+                <h4>{item.title}</h4>
+                <p>Price: ₹{item.price}</p>
+                <div className="quantityControls">
+                  <button onClick={() => removeFromCart(item.id)}>-</button>
+                  <span>{item.qty}</span>
+                  <button onClick={() => addToCart(item)}>+</button>
+                </div>
+              </div>
+            </div>
+          ))
+        )}
+      </div>
 
-      {cart.map((item) => (
-        <div
-          key={item.id}
-          style={{
-            display: "flex",
-            gap: "20px",
-            marginBottom: "20px",
-            borderBottom: "1px solid #ddd",
-            paddingBottom: "15px",
-            alignItems: "center",
-          }}
-        >
-          <img
-            src={item.thumbnail || item.image}
-            alt={item.title}
-            style={{
-              width: "120px",
-              height: "120px",
-              objectFit: "contain",
-            }}
-          />
-
-          <div style={{ flex: 1 }}>
-            <h4>{item.title}</h4>
-            <p>₹{item.price}</p>
-          </div>
-
-          <button onClick={() => removeFromCart(item.id)}>Remove</button>
-
-          <span style={{ margin: "0 10px" }}>{item.qty}</span>
-
-          <button onClick={() => addToCart(item)}>+</button>
-        </div>
-      ))}
-
-      {/* TOTAL */}
-      <h3>Total: ₹{total.toFixed(2)}</h3>
-
-      {/* PROCEED TO CHECKOUT BUTTON */}
-      <button
-        className="checkout__button"
-        onClick={() => {
-          clearCart();
-          navigate("/order-success");
-        }}
-        style={{
-          marginTop: "20px",
-          padding: "10px 20px",
-          backgroundColor: "#f0c14b",
-          border: "1px solid #a88734",
-          cursor: "pointer",
-        }}
-      >
-        Proceed to Checkout
-      </button>
+      <div className="orderSummary">
+        <h3>Order Summary</h3>
+        <p>Total Items: {cart.reduce((acc, item) => acc + item.qty, 0)}</p>
+        <p>
+          Total Price: ₹
+          {cart.reduce((acc, item) => acc + item.price * item.qty, 0)}
+        </p>
+        <button className="checkoutBtn" onClick={handleCheckout}>
+          Proceed to Checkout
+        </button>
+      </div>
     </div>
   );
 }

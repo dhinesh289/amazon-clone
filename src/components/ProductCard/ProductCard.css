@@ -62,18 +62,32 @@
 /* BUTTON */
 .productCard__btn {
   margin-top: auto;
-  padding: 10px;
+  padding: 10px 16px;
   border-radius: 20px;
   border: 1px solid #a88734;
-  background: linear-gradient(#f7dfa5, #f0c14b);
+  background: linear-gradient(#ffd814, #f7ca00);
   cursor: pointer;
   font-size: 14px;
+  font-weight: 600;
+  color: #111;
+
+  transition: all 0.3s ease;
 }
 
+/* Hover effect */
 .productCard__btn:hover {
-  background: linear-gradient(#f5d78e, #eeb933);
+  background: linear-gradient(#f7ca00, #f2c200);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
+/* Click effect */
+.productCard__btn:active {
+  transform: scale(0.95);
+  box-shadow: none;
+}
+
+/* Product link */
 .productCard__link {
   text-decoration: none;
   color: inherit;

@@ -45,6 +45,16 @@ export function CartProvider({ children }) {
     );
   };
 
+  // **New: Update quantity directly**
+  const updateQuantity = (id, qty) => {
+    if (qty <= 0) return removeFromCart(id);
+    setCart((prev) =>
+      prev.map((item) =>
+        item.id === id ? { ...item, qty } : item
+      )
+    );
+  };
+
   // Clear entire cart
   const clearCart = () => {
     setCart([]);
@@ -52,7 +62,7 @@ export function CartProvider({ children }) {
 
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, removeFromCart, clearCart }}
+      value={{ cart, addToCart, removeFromCart, updateQuantity, clearCart }}
     >
       {children}
     </CartContext.Provider>

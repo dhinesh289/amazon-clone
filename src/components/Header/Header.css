@@ -1,86 +1,35 @@
+/* ================= MAIN HEADER ================= */
+
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #131921;
-  padding: 0px 20px;
+  padding: 10px 20px;
   color: white;
-  height: 60px;
-}
-
-/* Left */
-.header__logo {
-  color: #f08804;
-  cursor: pointer;
-}
-
-/* Search */
-.header__search {
-  flex: 1;
-  display: flex;
-  margin: 0 20px;
-  max-width: 600px;
-}
-
-.header__search input {
-  flex: 1;
-  padding: 8px;
-  border: none;
-  outline: none;
-}
-
-.header__searchBtn {
-  padding: 8px 14px;
-  background-color: #febd69;
-  border: none;
-  cursor: pointer;
-}
-
-/* Right section */
-.header__nav {
-  display: flex;
-  align-items: center;
   gap: 20px;
+  position: relative;
 }
 
-.header__option {
-  display: flex;
-  flex-direction: column;
-  font-size: 12px;
-  cursor: pointer;
-  color: #ddd;
-}
-
-.header__option strong {
-  font-size: 14px;
-  color: #ddd;
-}
-
-.cart {
-  font-size: 22px;
-  cursor: pointer;
-}
-
-
+/* LOGO */
 
 .logo {
   display: flex;
   align-items: center;
-  cursor: pointer;
 }
 
 .logo img {
-  width: auto;
-  height: 40px;
+  width: 100px;
   object-fit: contain;
 }
 
+/* SEARCH BAR */
 
 .search {
-  display: flex;
   flex: 1;
-  max-width: 600px;
-  margin: 0 20px;
+  display: flex;
+  max-width: 700px;
+  min-width: 200px;
 }
 
 .search input {
@@ -91,108 +40,250 @@
 }
 
 .search button {
-  background-color: #febd69;
-  border: none;
   padding: 10px 15px;
+  background: #febd69;
+  border: none;
   cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.search button:hover {
+  background: #f3a847;
+}
+
+/* RIGHT NAV */
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+/* NAV OPTIONS */
+
+.header__option {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  padding: 4px 6px;
+  transition: color 0.2s ease;
+}
+
+.header__option:hover {
+  color: #ff9900;
+}
+
+.header__optionLineOne {
+  font-size: 12px;
+}
+
+.header__optionLineTwo {
+  font-size: 14px;
   font-weight: bold;
 }
 
+/* CART */
+
 .cart {
-  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 5px;
   color: white;
   text-decoration: none;
-  font-size: 22px;
+  font-weight: bold;
+  transition: color 0.2s ease;
 }
 
-.accountDropdown {
-  position: absolute;
-  top: 50px;
-  right: 0;
-  width: 220px;
-  background: white;
-  border: 1px solid #ddd;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-  padding: 15px;
-  z-index: 100;
-  display: flex;
-  flex-direction: column;
+.cart:hover {
+  color: #ff9900;
 }
 
-.signinBtn {
-  background-color: #ffd814;
-  padding: 8px;
-  text-align: center;
-  border-radius: 20px;
-  text-decoration: none;
-  color: black;
-  margin-bottom: 10px;
-  font-weight: 500;
-}
-
-.signinBtn:hover {
-  background-color: #f7ca00;
-}
-
-.newCustomer {
+.header__cartCount {
+  background: #f08804;
+  padding: 2px 6px;
+  border-radius: 50%;
   font-size: 12px;
-  margin-bottom: 10px;
 }
 
-.dropdownItem {
-  padding: 6px 0;
-  text-decoration: none;
-  color: black;
-  font-size: 14px;
-}
-
-.dropdownItem:hover {
-  text-decoration: underline;
-}
+/* ACCOUNT DROPDOWN */
 
 .accountSection {
   position: relative;
-  cursor: pointer;
 }
 
-/* Hide by default */
 .accountDropdown {
- 
   position: absolute;
-  top: 45px;
+  top: 42px;
   right: 0;
+
   width: 220px;
   background: white;
-  border: 1px solid #ddd;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-  padding: 15px;
-  z-index: 999;
+  color: black;
+
+  border-radius: 6px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+
+  padding: 12px;
+  z-index: 2000;
 }
 
-/* Show on hover */
-.accountSection:hover .accountDropdown {
-  display: flex;
-  flex-direction: column;
+/* SIGN IN BUTTON */
+.signinBtn {
+  display: block;
+  width: 100%;
+  text-align: center;
+
+  background: #ffd814;
+  border: 1px solid #fcd200;
+
+  padding: 8px 0;
+  margin: 10px 0;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  color: #111;
+  border-radius: 8px;
+
+  text-decoration: none;
+  cursor: pointer;
+
+  transition: all 0.2s ease;
 }
 
-@media (max-width: 768px) {
+.signinBtn:hover {
+  background: #f7ca00;
+}
+
+.dropdownItem {
+  display: block;
+  padding: 6px 0;
+  text-decoration: none;
+  color: #111;
+}
+
+.dropdownItem:hover {
+  color: #ff9900;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
   .header {
     flex-direction: column;
     align-items: stretch;
-    padding: 10px;
+    gap: 10px;
+  }
+
+  .logo {
+    justify-content: center;
   }
 
   .search {
     width: 100%;
-    margin: 10px 0;
   }
 
-  .logo img {
-    width: 100px;
+  .header__nav {
+    justify-content: space-around;
+    width: 100%;
   }
 
-  .cart {
-    align-self: flex-end;
-    margin-top: 5px;
+  .header__optionLineOne {
+    display: none;
   }
+
+  .header__optionLineTwo {
+    font-size: 12px;
+  }
+
+  .cartText {
+    display: none;
+  }
+  .search input {
+    min-width:0;
+  }
+
+}
+
+/* =========================
+   SECOND NAVBAR (CATEGORY BAR)
+========================= */
+
+.subHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: #232f3e;
+  color: white;
+  padding: 0 24px;
+  height: 40px;
+  font-size: 14px;
+}
+
+.subHeader__left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.menuIcon {
+  font-size: 18px;
+}
+
+.subHeader__links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.subHeader__links span {
+  
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  padding: 6px 10px;
+  transition: 0.2s;
+ 
+}
+
+.subHeader__links span:hover {
+   color: #ff9900;
+ 
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  .subHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 10px 16px;
+  }
+
+  .subHeader__links {
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 6px;
+  }
+}
+.navLink{
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  padding: 6px 10px;
+  transition: 0.2s;
+}
+.navLink:hover{
+  color: #ff9900;
 }

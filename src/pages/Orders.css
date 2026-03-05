@@ -1,0 +1,81 @@
+.ordersPage {
+  padding: 20px;
+  background-color: #f3f3f3;
+  min-height: 100vh;
+}
+
+.ordersPage h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+.orderCard {
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 16px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.orderHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.orderHeader span {
+  font-size: 14px;
+  color: #555;
+}
+
+.orderStatus {
+  font-weight: 600;
+  color: #007185; /* Amazon blue-ish color */
+}
+
+.orderProducts {
+  border-top: 1px solid #ddd;
+  padding-top: 12px;
+}
+
+.orderProduct {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.orderProduct img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-right: 16px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  background-color: #fafafa;
+}
+
+.productDetails {
+  flex: 1;
+}
+
+.productDetails h4 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #111;
+}
+
+.productDetails span {
+  font-size: 14px;
+  color: #555;
+}
+
+.orderTotal {
+  text-align: right;
+  font-weight: 600;
+  font-size: 16px;
+  margin-top: 8px;
+  color: #111;
+}
